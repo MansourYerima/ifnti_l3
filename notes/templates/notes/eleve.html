@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eleve</title>
+</head>
+<body>
+    <h2> Nom: {{ eleve.nom }} </h2>
+    <h2> Prenom: {{ eleve.prenom }} </h2>
+
+    <a href="{% url 'notes:eleves' %}"> <button>  Voir les eleves </button> </a>
+</body>
+</html>

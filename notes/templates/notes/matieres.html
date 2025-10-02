@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Matieres</title>
+</head>
+<body>
+    <h1>Liste de matiere suivi des enseignants</h1>
+    <div>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Matière</th>
+                    <th>Enseignant</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for matiere in matieres %}
+                <tr>
+                    <td>{{ matiere.nom }}</td>
+                    <td>{{ matiere.enseignant }}</td>
+                    <td><a href="{% url 'notes:matiere' matiere.id %}"> Voir detail matiere</a> </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

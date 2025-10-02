@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eleves</title>
+</head>
+<body>
+    <h1>Liste des eleves</h1>
+    <table border="1">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for eleve in eleves %}
+                <tr>
+                    <td>{{ eleve.nom }}</td>
+                    <td>{{ eleve.prenom }}</td>
+                    <td><a href="{% url 'notes:eleve' eleve.id %}"> Voir detail eleve</a> </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+    </table>
+</body>
+</html>

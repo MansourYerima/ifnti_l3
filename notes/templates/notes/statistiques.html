@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Statistiques</title>
+</head>
+<body>
+    <h1>Les Statistiques</h1>
+    <fieldset>
+        <h2>Nombre total d'eleves, d'enseignants, de matieres et de notes</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nombre Total Eleves</th>
+                    <th>Nombre Total Notes</th>
+                    <th>Nombre Total Matière</th>
+                    <th>Nombre Total Enseignant</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+
+                    <td>{{ eleves }}</td>
+                    <td>{{ matieres }}</td>
+                    <td>{{ enseignants }}</td>
+                    <td>{{ notes }}</td>
+
+                </tr>
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+        <h2>Moyenne generale de toutes les notes par eleves...</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nom</th>
+                    <th>Prenom</th>
+                    <th>Moyenne</th>
+                </tr>
+            </thead>
+            <tbody>
+            {%  for eleve in moyenne_eleve %}
+                <tr>
+                    <td>{{ eleve.nom }}</td>
+                    <td>{{ eleve.prenom }}</td>
+                    <td>{{ eleve.moyenne }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+        <h2>Moyenne des notes par matiere</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Nom matiere</th>
+                    <th>Moyenne des notes</th>
+                </tr>
+            </thead>
+            <tbody>
+            {%  for matiere in moyenne_matiere %}
+                <tr>
+                    <td>{{ matiere.nom }}</td>
+                    <td>{{ matiere.moyenne }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </fieldset>
+    <fieldset>
+            <h2>Les meilleurs</h2>
+            <table border="1">
+                <thead>
+                    <tr>
+                        <th>Nom</th>
+                        <th>Prenom</th>
+                        <th>Moyenne</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                {%  for meilleur in meilleures %}
+                    <tr>
+                        <td>{{ meilleur.nom }}</td>
+                        <td>{{ meilleur.prenom }}</td>
+                        <td>{{ meilleur.moyenne }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </fieldset>
+    <fieldset>
+        <h2>Les niveaux</h2>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Nom</th>
+                                <th>Nombre eleves</th>
+                                <th>Moyenne du niveau</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {%  for niveau in niveaux %}
+                            <tr>
+                                <td>{{ niveau.nom }}</td>
+                                <td>{{ niveau.nombre_eleves }}</td>
+                                <td>(>_<) (*_*) (-_-)...</td>
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+        </fieldset>
+</body>
+</html>

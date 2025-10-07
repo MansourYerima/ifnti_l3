@@ -2,8 +2,6 @@ from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 
 from notes.models import Eleve
-#from django.db.models import Avg
-
 
 
 def eleves(request):

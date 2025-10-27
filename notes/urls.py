@@ -9,5 +9,11 @@ urlpatterns = [
     path('matieres/', views.matieres, name='matieres'),
     path('matiere/<int:id>/', views.matiere, name='matiere'),
     path('niveau/<int:id>/', views.niveau, name='niveau'),
+    path('ajouter_note/<int:eleve_id>/<int:matiere_id>/', views.add_note, name='add_note'),
+    path('ajouter_eleve/', views.add_eleve, name='add_eleve'),
+    path('ajouter_enseignant/', views.add_enseignant, name='add_enseignant'),
+    path('modifier_eleve/<int:eleve_id>', views.update_eleve, name='update_eleve'),
+    path('modifier_enseignant/<int:enseignant_id>', views.update_enseignant, name='update_enseignant'),
+    path('enseignants/', views.enseignants, name='enseignants')
 ]
 

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajouter une note</title>
+</head>
+<body>
+
+    <h2>Ajouter une note pour {{ eleve.prenom }} {{ eleve.nom }} en {{ matiere.nom }}</h2>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <div>
+            <button type="submit">Enregistrer</button>
+        </div>
+    </form>
+
+</body>
+</html>

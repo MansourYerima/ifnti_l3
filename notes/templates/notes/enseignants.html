@@ -2,11 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Eleves</title>
+    <title>Enseignants</title>
 </head>
 <body>
-    <h1>Liste des eleves</h1>
-
+    <h1>Liste des enseignants</h1>
     <table border="1">
             <thead>
                 <tr>
@@ -16,13 +15,12 @@
                 </tr>
             </thead>
             <tbody>
-                {% for eleve in eleves %}
+                {% for enseignant in enseignants %}
                 <tr>
-                    <td>{{ eleve.nom }}</td>
-                    <td>{{ eleve.prenom }}</td>
+                    <td>{{ enseignant.nom }}</td>
+                    <td>{{ enseignant.prenom }}</td>
                     <td>
-                        <button><a href="{% url 'notes:eleve' eleve.id %}"> Voir detail eleve</a></button>
-                        <button><a href="{% url 'notes:update_eleve' eleve.id %}"> Modifier</a></button>
+                        <button><a href="{% url 'notes:update_enseignant' enseignant.id %}"> Modifier</a></button>
                     </td>
                 </tr>
                 {% endfor %}

@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'ifnti_l3.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'note',
+        'NAME': 'notes',
         'USER': 'mansour',
         'PASSWORD': 'mansour',
         'HOST': 'localhost',

@@ -7,7 +7,26 @@
 <body>
     <h2> Nom: {{ eleve.nom }} </h2>
     <h2> Prenom: {{ eleve.prenom }} </h2>
+    <h2> Niveau: {{ eleve.niveau }} </h2>
+    <div>
+        <table border="1" cellpadding="8" cellspacing="0">
+          <thead>
+            <tr>
+              <th>Matiere</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for matiere in matieres%}
+            <tr>
+              <td>{{ matiere.nom }}</td>
+              <td><a href="{% url 'notes:add_note' eleve.id matiere.id  %}">Modifier</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
 
+    </div>
     <a href="{% url 'notes:eleves' %}"> <button>  Voir les eleves </button> </a>
 </body>
 </html>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier eleve</title>
+</head>
+<body>
+<h1>Modifier les donnees de {{ eleve.nom }} {{ eleve.prenom }}</h1>
+    <form method="post" >
+        {% csrf_token %}
+        {{ form }}
+        <div>
+            <button type="submit"> Modifier</button>
+        </div>
+    </form>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+</head>
+<body>
+    <div>
+        <form method="post">
+            {% csrf_token %}
+            <div style="margin-bottom: 15px;"><input type="text" name="username" placeholder="Nom d'utilisateur"></div>
+            <div style="margin-bottom: 15px;"><input type="password" name="password" placeholder="Mot de passe"></div>
+            <div style="margin-top: 15px;"><button type="submit">Se connecter</button></div>
+        </form>
+    </div>
+
+{% if messages %}
+    {% for message in messages %}
+        <p>{{ message }}</p>
+    {% endfor %}
+{% endif %}
+
+</body>
+</html>

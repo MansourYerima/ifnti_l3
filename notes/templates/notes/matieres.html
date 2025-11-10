@@ -7,7 +7,7 @@
 <body>
     <h1>Liste de matiere suivi des enseignants</h1>
     <div>
-        <table border="1">
+        <table border="1" cellpadding="8" cellspacing="0">
             <thead>
                 <tr>
                     <th>Matière</th>
@@ -20,11 +20,16 @@
                 <tr>
                     <td>{{ matiere.nom }}</td>
                     <td>{{ matiere.enseignant }}</td>
-                    <td><a href="{% url 'notes:matiere' matiere.id %}"> Voir detail matiere</a> </td>
+                    <td><a href="{% url 'notes:matiere' matiere.id %}"><button style="margin-right:5px; padding:3px 6px;">Voir detail matiere</button></a> </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+
+    <div style="margin-top: 15px;">
+        <a href="{% url 'notes:index' %}">
+        <button style="padding:5px 10px;">Retour a la page d'acceuil</button>
     </div>
 
 </body>

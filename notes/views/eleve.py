@@ -1,8 +1,11 @@
+from math import log
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404
 from notes.forms import EleveForm
 from notes.models import Eleve
 from django.http import HttpResponse
+from django.contrib.auth.decorators import login_required
+
 
 
 
@@ -11,12 +14,12 @@ def eleves(request):
     elevess = list(eleves)
     return render(request, "notes/eleves.html", {"eleves":elevess})
 
-
 def eleve(request, id):
     eleve = get_object_or_404(Eleve, pk=id)
     matiere_eleve = eleve.matieres.all()
     return render(request, "notes/eleve.html", {"eleve":eleve, "matieres":matiere_eleve})
 
+@login_required
 def add_eleve(request):
     form = EleveForm(request.POST)
     if form.is_valid():
@@ -24,6 +27,7 @@ def add_eleve(request):
         return HttpResponse("Eleve ajoute avec succes")
     return render(request, "notes/add_eleve.html", {"form":form})
 
+@login_required
 def update_eleve(request, eleve_id):
     eleve = get_object_or_404(Eleve, id=eleve_id)
 

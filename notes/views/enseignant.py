@@ -1,15 +1,26 @@
+from math import log
 from notes.models import Enseignant
 from notes.forms import EnseignantForm
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404
+from django.contrib.auth.decorators import login_required
+
+from notes.views import matiere
+
 
 def enseignants(request):
     enseignants = Enseignant.objects.all()
     enseignantss = list(enseignants)
     return render(request, "notes/enseignants.html", {"enseignants": enseignantss})
 
+@login_required
+def enseignant(request, id):
+    enseignant = get_object_or_404(Enseignant, id=id)
+    matieres = enseignant.matieres.all()
+    return render(request, "notes/enseignant.html", {"enseignant": enseignant, "matieres": matieres})
 
+@login_required
 def add_enseignant(request):
     form = EnseignantForm(request.POST)
     if form.is_valid():
@@ -17,6 +28,7 @@ def add_enseignant(request):
         return HttpResponse("Enseignant ajoute avec succes")
     return render(request, "notes/add_eleve.html", {"form": form})
 
+@login_required
 def update_enseignant(request, enseignant_id):
     enseignant = get_object_or_404(Enseignant, id=enseignant_id)
 

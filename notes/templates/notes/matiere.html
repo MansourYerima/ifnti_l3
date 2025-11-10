@@ -6,7 +6,7 @@
 </head>
 <body>
     <h2> Nom matiere : {{ matiere }}</h2>
-
+    <h3>Professeur: {{ matiere.enseignant }}</h3>
     <a href="{% url 'notes:matieres' %}"> <button>  Voir les matieres </button> </a>
 </body>
 </html>

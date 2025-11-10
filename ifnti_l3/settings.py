@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'ifnti_l3.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'notes',
+        'NAME': 'note',
         'USER': 'mansour',
         'PASSWORD': 'mansour',
         'HOST': 'localhost',
@@ -132,3 +132,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGIN_URL = 'notes:login'

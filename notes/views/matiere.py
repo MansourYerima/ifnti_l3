@@ -18,7 +18,6 @@ def matieres(request):
     #return HttpResponse(matiere_enseignant)
     return render(request, "notes/matieres.html", {"matieres":matieres})
 
-
 def matiere(request, id):
     matiere = get_object_or_404(Matiere, pk=id)
     return render(request, "notes/matiere.html", {"matiere":matiere})

@@ -20,13 +20,16 @@
             {% for matiere in matieres%}
             <tr>
               <td>{{ matiere.nom }}</td>
-              <td><a href="{% url 'notes:add_note' eleve.id matiere.id  %}">Modifier</a></td>
+              <td><a href="{% url 'notes:add_note' eleve.id matiere.id  %}"><button>Modifier la note</button></a></td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
 
     </div>
-    <a href="{% url 'notes:eleves' %}"> <button>  Voir les eleves </button> </a>
+
+    <div style="margin-top: 15px;">
+      <a href="{% url 'notes:eleves' %}"> <button style="padding: 5px 10px;">  Voir les eleves </button> </a>
+    </div>
 </body>
 </html>

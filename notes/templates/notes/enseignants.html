@@ -6,7 +6,12 @@
 </head>
 <body>
     <h1>Liste des enseignants</h1>
-    <table border="1">
+    <div style="margin-bottom: 15px;">
+        <a href="{% url 'notes:add_enseignant' %}">
+            <button>Ajouter un enseignant</button>
+        </a>
+    </div>
+    <table border="1" cellpadding="8" cellspacing="0"> 
             <thead>
                 <tr>
                     <th>Nom</th>
@@ -20,11 +25,17 @@
                     <td>{{ enseignant.nom }}</td>
                     <td>{{ enseignant.prenom }}</td>
                     <td>
-                        <button><a href="{% url 'notes:update_enseignant' enseignant.id %}"> Modifier</a></button>
+                        <a href="{% url 'notes:update_enseignant' enseignant.id %}"><button style="margin-right:5px; padding:3px 6px;">Modifier</button></a>
+                        <a href="{% url 'notes:enseignant' enseignant.id %}"><button style="margin-right:5px; padding:3px 6px;">Voir detail</button></a>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
     </table>
+    <div style="margin-top: 15px;">
+        <a href="{% url 'notes:index' %}">
+        <button style="padding:5px 10px;">Retour a la page d'acceuil</button>
+    </a>
+    </div>
 </body>
 </html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enseignant</title>
+</head>
+<body>
+    <h2>Nom: {{ enseignant.nom }}</h2>
+    <h2>Prenom: {{ enseignant.prenom }}</h2>
+    <h3>Matieres de l'enseignant: </h3>
+    <ol>
+    {% for matiere in matieres %}
+        <li>{{ matiere.nom }}</li>
+    {% endfor %}
+    </ol>
+
+    <div style="margin-top: 15px;">
+        <a href="{% url 'notes:enseignants' %}">
+        <button style="padding:5px 10px;">Retour</button>
+    </a>
+    </div>
+</body>
+</html>

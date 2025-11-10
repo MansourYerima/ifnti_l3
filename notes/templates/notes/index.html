@@ -1,10 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>First</title>
+    <title>Page d'accueil</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            color: #000000;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 100px;
+        }
+        a {
+            color: #000000;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        nav {
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
-    <h1>Bonjour le monde !</h1>
+    <h1>Bienvenue sur ma page d'accueil</h1>
+    <nav>
+        <a href="{% url 'notes:eleves' %}">Eleves</a>
+        <a href="{% url 'notes:matieres' %}">Matieres</a>
+        <a href="{% url 'notes:enseignants' %}">Enseignants</a>
+    </nav>
 </body>
 </html>

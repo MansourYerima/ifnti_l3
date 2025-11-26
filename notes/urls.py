@@ -1,4 +1,5 @@
 from django.urls import path
+
 from . import views
 app_name = "notes"
 urlpatterns = [
@@ -17,6 +18,7 @@ urlpatterns = [
     path('ajouter_enseignant/', views.add_enseignant, name='add_enseignant'),
     path('modifier_eleve/<int:eleve_id>', views.update_eleve, name='update_eleve'),
     path('modifier_enseignant/<int:enseignant_id>', views.update_enseignant, name='update_enseignant'),
-    path('enseignants/', views.enseignants, name='enseignants')
+    path('enseignants/', views.enseignants, name='enseignants'),
+    path('jpl/', views.jpl_view, name='jpl')
 ]
 
